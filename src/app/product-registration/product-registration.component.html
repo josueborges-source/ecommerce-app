@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Cadastro de Produto</h1>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="productName">Nome do Produto:</label>
+        <input type="text" id="productName" formControlName="productName" required placeholder="Digite o nome do produto">
+      </div>
+    
+      <div>
+        <label for="productDescription">Descrição:</label>
+        <textarea id="productDescription" formControlName="productDescription" rows="4" placeholder="Digite uma breve descrição"></textarea>
+      </div>
+    
+      <!--
+      <mat-form-field appearance="fill">
+        <mat-label>Preço (R$):</mat-label>
+        <input matInput type="text" formControlName="productPrice" placeholder="Digite o preço do produto" (input)="formatPriceOnInput($event)" />
+      </mat-form-field>
+      -->
+  
+      <div>
+        <label for="productCategory">Categoria:</label>
+        <select id="productCategory" formControlName="productCategory" required>
+          <option value="" disabled selected>Selecione uma categoria</option>
+          <option value="electronics">Eletrônicos</option>
+          <option value="clothing">Roupas</option>
+          <option value="food">Alimentos</option>
+          <option value="books">Livros</option>
+        </select>
+      </div>
+    
+      <div>
+        <label for="productStock">Quantidade em Estoque:</label>
+        <input type="number" id="productStock" formControlName="productStock" required placeholder="Digite a quantidade em estoque" min="0">
+      </div>
+    
+      <button type="submit" [disabled]="!productForm.valid">Cadastrar Produto</button>
+    </form>
+  </div>

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
+  selector: 'product-registration',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: 'product-registration.component.html'
 })
-export class AppComponent {
+export class ProductRegistrationComponent {
   productForm: FormGroup;
 
   constructor(private fb: FormBuilder) {

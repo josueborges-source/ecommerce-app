@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
+import { ProductRegistrationComponent } from './product-registration/product-registration.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [RouterOutlet, ProductRegistrationComponent], // <-- Importando o componente
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'ecommerce';
-}
+export class AppComponent { }
